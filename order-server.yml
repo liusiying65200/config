@@ -9,7 +9,7 @@ spring:
     name: order-server
 eureka:
   client:
-    server-url:
+    service-url:
       defaultZone: http://eureka8761.com:8761/eureka/,http://eureka8762.com:8762/eureka/,http://eureka8763.com:8763/eureka/,http://eureka8888.com:8888/eureka/
     register-with-eureka: true
     fetch-registry: true
@@ -30,7 +30,7 @@ spring:
   profiles: 8089
 eureka:
   client:
-    server-url:
+    service-url:
       defaultZone: http://eureka8761.com:8761/eureka/,http://eureka8762.com:8762/eureka/,http://eureka8763.com:8763/eureka/,http://eureka8888.com:8888/eureka/
     register-with-eureka: true
     fetch-registry: true
@@ -51,7 +51,7 @@ spring:
   profiles: 8088
 eureka:
   client:
-    server-url:
+    service-url:
       defaultZone: http://eureka8761.com:8761/eureka/,http://eureka8762.com:8762/eureka/,http://eureka8763.com:8763/eureka/,http://eureka8888.com:8888/eureka/
     register-with-eureka: true
     fetch-registry: true
