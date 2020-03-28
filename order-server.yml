@@ -13,13 +13,16 @@ eureka:
       defaultZone: http://eureka8761.com:8761/eureka/,http://eureka8762.com:8762/eureka/,http://eureka8763.com:8763/eureka/,http://eureka8888.com:8888/eureka/
     register-with-eureka: true
     fetch-registry: true
+  instance:
+    prefer-ip-address: true
+    app-group-name: hualisheng
 management:
   endpoints:
     web:
       exposure:
         include: '*'
 server:
-  port: 8201
+  port: 8081
 ---
 spring:
   application:
@@ -31,10 +34,13 @@ eureka:
       defaultZone: http://eureka8761.com:8761/eureka/,http://eureka8762.com:8762/eureka/,http://eureka8763.com:8763/eureka/,http://eureka8888.com:8888/eureka/
     register-with-eureka: true
     fetch-registry: true
+  instance:
+    prefer-ip-address: true
+    app-group-name: hualisheng
 management:
   endpoints:
     web:
       exposure:
         include: '*'
 server:
-  port: 8202
+  port: 8081
