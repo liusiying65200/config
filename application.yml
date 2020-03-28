@@ -1,0 +1,60 @@
+server:
+  port: 9999
+logging:
+  level:
+    com.netflix.discovery: 'OFF'
+    org.springframework.cloud: 'DEBUG'
+    
+#eureka:
+#  instance:
+#    leaseRenewalIntervalInSeconds: 10
+#    statusPageUrlPath: /admin/info
+#    healthCheckUrlPath: /admin/health
+
+#spring:
+#  cloud:
+#    config:
+#      server:
+#        git:
+#          uri: https://github.com/spring-cloud-samples/config-repo
+#          basedir: target/config
+spring:
+  cloud:
+    config:
+      label: master
+      server:
+        default-label: master
+        git:
+          uri: https://github.com/liusiying65200/config.git
+          username: liusiying_office@126.com
+          password: lsy65200
+          basedir: E:\github\config
+---
+#spring:
+#  profiles: cloud
+#eureka:
+#  password: password
+#  instance:
+#    hostname: ${vcap.application.uris[0]}
+#    nonSecurePort: 80
+#  client:
+#    serviceUrl:
+#      defaultZone: ${vcap.services.${PREFIX:}eureka.credentials.uri:http://user:${eureka.password:}@${PREFIX:}eureka.${application.domain:cfapps.io}}/eureka/
+#
+spring:
+  application:
+    name: config-server
+  profiles:
+    active:
+      - dev
+---
+spring:
+  application:
+    name: config-server-dev
+  profiles: dev
+---
+spring:
+  application:
+    name: config-server-test
+  profiles: test
+# 保存为UTF-8格式
